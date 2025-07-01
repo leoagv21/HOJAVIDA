@@ -1,0 +1,863 @@
+/* Variables globales para colores y diseño */
+:root {
+    --color-primario: #2980B9; /* Azul serio */
+    --color-secundario: #2C3E50; /* Azul oscuro */
+    --color-fondo: #f5f5f5; /* Gris claro */
+    --color-texto: #333; /* Gris oscuro */
+    --color-blanco: #fff; /* Blanco */
+    --color-negro: #000; /* Negro */
+    --color-BARRA: #ced9e0;
+    --color-hover: #f7f7f7;
+    --color-destacado: #6c63ff;
+    --color-negro2: #333333;
+}
+
+/* Solución para evitar desbordamientos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garantiza que padding y bordes se incluyan en el ancho/alto */
+}
+
+/* Configuración general para eliminar desbordamientos */
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Evita desbordamiento horizontal */
+}
+
+:root {
+    --color-BARRA: #2c3e50;
+    --color-negro2: #ffffff;
+    --color-destacado: #dddddd;
+    --color-hover: #a0d4f1;
+}
+
+/* Header */
+header {
+    background-color: var(--color-BARRA);
+    color: var(--color-negro2);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+/* Contenedor de navegación */
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Logo */
+header .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .logo-container img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+header .logo-container .logo {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--color-negro2);
+    text-transform: uppercase;
+}
+
+/* Menú */
+header .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+header .menu li a {
+    text-decoration: none;
+    color: var(--color-negro2);
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+}
+
+header .menu li a:hover {
+    background-color: var(--color-hover);
+    color: var(--color-destacado);
+}
+
+/* Botón hamburguesa */
+header .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+header .hamburger div {
+    width: 30px;
+    height: 4px;
+    background-color: var(--color-negro2);
+    border-radius: 5px;
+}
+
+/* Animación del botón hamburguesa */
+.hamburger.active div:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger.active div:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    header .menu {
+        display: none; /* Ocultar menú por defecto */
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 70px;
+        right: 15px;
+        background-color: var(--color-BARRA);
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    header .menu.show {
+        display: flex; /* Mostrar menú activo */
+    }
+
+    header .menu li a {
+        font-size: 1.2em;
+        padding: 10px 15px;
+    }
+
+    header .hamburger {
+        display: flex; /* Mostrar botón hamburguesa */
+    }
+}
+
+@media (min-width: 769px) {
+    header .menu {
+        display: flex; /* Menú siempre visible en pantallas grandes */
+    }
+
+    header .hamburger {
+        display: none; /* Ocultar botón hamburguesa */
+    }
+}
+
+
+
+
+
+
+
+/* Ajustes del carrusel */
+.inicio {
+    margin-top: -16px; /* Elimina márgenes externos */
+    margin-bottom: -16px;
+    padding: 0; /* Elimina márgenes internos */
+    height: 80vh; /* Ocupa toda la altura de la ventana */
+    width: 100vw; /* Ocupa toda la anchura de la ventana */
+    color: var(--color-blanco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+   
+    background-size: cover; /* La imagen cubre completamente el contenedor */
+    background-position: center; /* Centrado de la imagen */
+    background-repeat: no-repeat; /* Evita que se repita la imagen */
+    border-radius: 0; /* Bordes rectos */
+    box-shadow: none; /* Sin sombras para pantalla completa */
+}
+
+/* Estilo para las imágenes y videos del carrusel */
+.carousel-inner img,
+.carousel-inner video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen/video cubra completamente */
+    border-radius: 0; /* Bordes rectos */
+}
+
+/* Íconos de navegación */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%);
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro en los controles */
+    border-radius: 50%;
+    padding: 12px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Cambiar fondo en hover */
+    transform: scale(1.1);
+}
+
+/* Estilo del contenido */
+.inicio .contenido {
+    z-index: 10; /* Asegura que el texto esté encima de la imagen */
+    text-align: center;
+    color: var(--color-blanco);
+    padding: 20px;
+}
+
+.inicio .contenido h1 {
+    font-size: 4em; /* Tamaño de fuente grande */
+    margin-bottom: 20px;
+    color: var(--color-blanco);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para destacar */
+    font-weight: 700;
+}
+
+.inicio .contenido p {
+    font-size: 1.5em;
+    margin: 10px 0 30px;
+    color: var(--color-blanco);
+    font-weight: 400;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Botón del carrusel */
+.inicio .btn {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.inicio .btn:hover {
+    background-color: #1C5981;
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra más prominente */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .inicio .contenido h1 {
+        font-size: 2.5em;
+    }
+
+    .inicio .contenido p {
+        font-size: 1.1em;
+    }
+
+    .inicio .btn {
+        padding: 12px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .inicio .contenido h1 {
+        font-size: 2em;
+    }
+
+    .inicio .contenido p {
+        font-size: 1em;
+    }
+
+    .inicio .btn {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+}
+
+
+
+
+/* Sobre Mí */
+.sobre-mi {
+  margin-top: -80px;
+  padding: 120px 20px;
+  background-color: #ecf0f1;
+  text-align: center;
+  color: #333;
+}
+
+.sobre-mi h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: var(--color-secundario);
+}
+
+.sobre-mi-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Foto de perfil */
+.foto img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--color-primario);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.foto img:hover {
+  transform: scale(1.1);
+}
+
+/* Descripción */
+.descripcion {
+  max-width: 600px;
+  text-align: justify;
+  font-size: 1.05em;
+  line-height: 1.7;
+}
+
+/* Video de presentación */
+.video-presentacion {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.video-presentacion h3 {
+  font-size: 1.3em;
+  color: var(--color-secundario);
+  margin-bottom: 15px;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+
+/* Video Explicativo */
+.video-explicativo {
+  background-color: #f8fafc;
+  padding: 60px 20px;
+  text-align: center;
+  color: #333;
+}
+
+.video-explicativo h2 {
+  font-size: 2.3em;
+  margin-bottom: 20px;
+  color: var(--color-secundario);
+}
+
+.video-explicativo p {
+  font-size: 1.05em;
+  color: #555;
+  max-width: 580px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+/* Video panorámico compacto */
+.video-panorama {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  height: 270px; /* compacto, pero panorámico (16:9 a 480x270) */
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.video-panorama video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+
+
+
+
+/* Ajuste para secciones */
+section {
+    padding-top: 80px; /* Ajusta esto según el tamaño de tu header */
+    padding: 120px 20px;
+    background: var(--color-blanco);
+    margin: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid #ddd; /* Línea sutil entre secciones */
+}
+
+/* Estilo para el título de la sección */
+section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--color-secundario);
+}
+
+
+/* Proyectos */
+.proyectos .galeria {
+    display: flex;
+    gap: 15px; /* Reducido el espacio entre los elementos */
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.proyectos .proyecto {
+    background: #ffffff; /* Color más limpio y claro */
+    border-radius: 8px; /* Bordes ligeramente menos redondeados */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Sombra menos profunda pero nítida */
+    padding: 15px; /* Compactado el padding */
+    max-width: 250px; /* Ancho más reducido */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.proyectos .proyecto img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.proyectos .proyecto h3 {
+    margin: 10px 0;
+    color: var(--color-secundario); /* Color más llamativo */
+    font-size: 1em; /* Tamaño reducido */
+    font-weight: 700;
+}
+
+.proyectos .proyecto:hover {
+    transform: scale(1.03); /* Efecto de expansión ligero */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25); /* Sombra más llamativa al pasar el cursor */
+}
+
+.proyectos .proyecto img:hover {
+    transform: scale(1.08); /* Efecto de zoom más sutil */
+}
+
+/* Miniaturas */
+.proyecto-img {
+    cursor: pointer;
+    max-width: 80px; /* Tamaño más compacto */
+    margin: 3px;
+    border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto-img:hover {
+    transform: scale(1.15); /* Efecto más notorio en miniaturas */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* Sombra más llamativa */
+}
+
+/* Proyecto Descripción Extendida */
+.proyecto .descripcion-extendida {
+    display: none;
+}
+
+.proyecto .leer-mas {
+    color: var(--color-secundario); /* Color vibrante para destacar */
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 8px;
+    font-size: 0.9em; /* Compactado */
+    display: block;
+}
+
+.proyecto .leer-mas:hover {
+    text-decoration: underline;
+}
+
+.descripcion-larga {
+    display: none;
+}
+
+.proyecto-img {
+    border: 1px solid #ccc;
+}
+
+/* Estilos adicionales para la clase "leer-mas" */
+.leer-mas {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Content container */
+.lightbox-content {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 90%; /* Allow more space for larger images */
+    max-height: 90%; /* Allow more space for larger images */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    position: relative; /* Keeps the close button on top */
+    overflow: hidden; /* Prevents image overflow */
+}
+
+/* Center image within the lightbox */
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 80vh; /* Scales image to fit within the viewport height */
+    object-fit: contain; /* Ensures image doesn't stretch */
+    margin: 0; /* Ensures no margins, making it fully centered */
+    display: block; /* Removes any inline display properties */
+    position: absolute; /* Positions image absolutely within the container */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the image perfectly */
+}
+
+/* Paragraph style */
+.lightbox-content p {
+    margin-top: 10px;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Close button */
+.lightbox .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+}
+
+.lightbox .close:hover {
+    color: red;
+}
+
+
+
+
+
+/* Estilo para Experiencia y Educación */
+.experiencia ul, .educacion ul {
+    list-style: none;
+    padding: 20px;  /* Reduje el padding general */
+    margin: 0;
+    font-family: 'Poppins', sans-serif;  /* Fuente profesional */
+    line-height: 1.6;
+    color: #333;  /* Color de texto más oscuro para mejorar la legibilidad */
+    background-color: #ecf0f1;  /* Fondo sutil que hace que el contenido destaque */
+    border-radius: 10px;  /* Bordes redondeados para una apariencia más suave */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para más profundidad */
+}
+
+.experiencia ul li, .educacion ul li {
+    margin-bottom: 15px;  /* Mayor separación entre los ítems */
+    text-align: left;
+    padding-left: 20px;  /* Más espaciado para una mejor alineación */
+    position: relative;
+    transition: transform 0.3s ease, background-color 0.3s ease;  /* Transición suave para efectos */
+}
+
+.experiencia ul li::before, .educacion ul li::before {
+    content: "\2022";  /* Añadir un punto antes del texto */
+    font-size: 26px;  /* Hacer el punto más grande */
+    color: #2980B9;  /* Color que resalta y es profesional */
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.experiencia ul li h3, .educacion ul li h3 {
+    font-size: 1.3em;  /* Tamaño de fuente mayor para los títulos */
+    color: #2C3E50;  /* Color más oscuro para los títulos */
+    margin-bottom: 5px;
+    font-weight: 700;  /* Negrita para destacar los títulos */
+    letter-spacing: 0.8px;  /* Mayor espaciado entre letras para un toque más moderno */
+    text-transform: uppercase;  /* Para dar énfasis a los títulos */
+}
+
+.experiencia ul li p, .educacion ul li p {
+    font-size: 1.1em;  /* Aumentamos el tamaño del texto */
+    margin: 0;  /* Eliminamos el margen superior para reducir la separación */
+    font-weight: 400;
+    color: #555;  /* Color más suave para el texto descriptivo */
+    line-height: 1.6;
+}
+
+.experiencia ul li:hover, .educacion ul li:hover {
+    background-color: #b4cada;  /* Color de fondo al pasar el mouse */
+    color: white;  /* Cambiar color del texto */
+    transform: translateX(10px);  /* Desplazar el ítem ligeramente a la derecha */
+    border-radius: 10px;  /* Bordes redondeados para un toque más suave */
+}
+
+/* Estilo adicional para un contorno sutil de separación entre los ítems */
+.experiencia ul li, .educacion ul li {
+    border-bottom: 1px solid #ddd;  /* Línea divisoria sutil entre los ítems */
+    padding-bottom: 10px;  /* Más espacio inferior para evitar aglomeración */
+}
+
+/* Reducir la separación entre las secciones de experiencia y educación */
+.experiencia, .educacion {
+    margin-top: -50px;
+    margin-bottom: 30px;  /* Más espacio inferior para un mejor balance */
+}
+
+.experiencia + .educacion {
+    margin-top: -20px;  /* Reducción de espacio entre experiencia y educación */
+}
+
+/* Agregar un contorno de sombra en hover para las listas */
+.experiencia ul li:hover, .educacion ul li:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);  /* Sombra más destacada */
+}
+
+
+
+
+
+/* Contacto */
+.contacto form {
+    max-width: 600px;
+    margin: 30px auto; /* Espaciado superior para separarlo del header */
+    text-align: left;
+    padding: 20px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0); /* Fondo con ligero gradiente */
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Sombra más definida */
+}
+
+.contacto form label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #34495e; /* Color más oscuro para mejor contraste */
+}
+
+.contacto form input,
+.contacto form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contacto form input:focus,
+.contacto form textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5); /* Efecto de resplandor */
+    outline: none;
+}
+
+.contacto form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contacto form button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: linear-gradient(145deg, #2980b9, #3498db); /* Botón con gradiente */
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contacto form button:hover {
+    background: linear-gradient(145deg, #1c5981, #2980b9);
+    transform: scale(1.05); /* Ampliar botón al pasar el cursor */
+}
+
+.contacto form button:active {
+    transform: scale(1); /* Restablecer tamaño al presionar */
+}
+
+/* Iconos Sociales */
+.contacto .iconos-sociales {
+    display: flex;
+    justify-content: center; /* Centra los íconos horizontalmente */
+    align-items: center; /* Centra los íconos verticalmente */
+    gap: 20px; /* Espacio entre los íconos */
+    margin-top: 25px;
+    height: 100%; /* Asegura que ocupe todo el alto del contenedor si es necesario */
+    text-align: center; /* Garantiza alineación de texto central si hay contenido relacionado */
+}
+
+.contacto .iconos-sociales a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #2980b9, #3498db);
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.contacto .iconos-sociales a:hover {
+    background: linear-gradient(145deg, #1c5981, #2980b9);
+    transform: scale(1.2); /* Efecto de ampliación */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+
+
+
+
+
+
+
+
+/* Información de Contacto */
+.contact-info {
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    max-width: 700px;
+    margin: 30px auto;
+}
+
+.contact-info h3,
+.contact-info h4 {
+    color: #2980b9;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    margin: 10px 0;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.contact-info a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #1c5981;
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #2c3e50;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1); /* Sombra en la parte superior */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .contacto form {
+        padding: 15px;
+    }
+
+    .contact-info {
+        padding: 20px;
+    }
+
+    .contacto .iconos-sociales a {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contacto form label {
+        font-size: 14px;
+    }
+
+    .contact-info {
+        padding: 15px;
+    }
+
+    .contacto .iconos-sociales a {
+        width: 40px;
+        height: 40px;
+    }
+}
