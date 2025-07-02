@@ -514,46 +514,33 @@ ul {
   margin-bottom: var(--space-sm);
 }
 
-/* ===== PROJECTS SECTION ===== */
+/* ===== PROJECTS SECTION - COMPACTO ===== */
 .project-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-sm);
-}
-
-.project-gallery img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--border-radius-sm);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  object-fit: cover;
-}
-
-.project-gallery img:hover {
-  transform: scale(1.02);
-  box-shadow: var(--shadow-md);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.75rem;
 }
 
 .project-card {
-  background-color: var(--white);
-  border-radius: var(--border-radius-md);
+  background: white;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition-normal);
-  display: flex;
-  flex-direction: column;
-  height: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
 
+/* Imagen con efecto sutil */
 .project-img-container {
   position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
   overflow: hidden;
-  aspect-ratio: 16 / 9;
 }
 
 .project-img {
@@ -564,52 +551,76 @@ ul {
 }
 
 .project-card:hover .project-img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
+/* Links que aparecen al hover */
 .project-links {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-sm);
-  background-color: rgba(0, 0, 0, 0.7);
+  gap: 0.5rem;
+  background: rgba(0,0,0,0.4);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.2s ease;
 }
 
 .project-card:hover .project-links {
   opacity: 1;
 }
 
+/* Contenido compacto */
 .project-info {
-  padding: var(--space-md);
+  padding: 0.75rem;
 }
 
 .project-info h4 {
-  font-size: var(--font-size-lg);
-  color: var(--text-dark);
-  margin-bottom: var(--space-xs);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+.project-info p {
+  font-size: 0.8rem;
+  color: #555;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Tech tags minimalistas */
 .project-tech {
-  margin-top: var(--space-xs);
+  margin-top: 0.5rem;
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-xs);
+  gap: 0.3rem;
 }
 
+.project-tech span {
+  font-size: 0.65rem;
+  padding: 0.2rem 0.4rem;
+  background: #f3f4f6;
+  border-radius: 4px;
+  color: #555;
+}
+
+/* Responsive ajustado */
 @media (max-width: 576px) {
   .project-gallery {
     grid-template-columns: 1fr;
+    gap: 0.5rem;
   }
-
-  .project-img-container {
-    aspect-ratio: 16 / 10;
+  
+  .project-info {
+    padding: 0.5rem;
   }
 }
 
@@ -863,9 +874,35 @@ ul {
 
 /* ===== FOOTER ===== */
 .footer {
-  background-color: var(--dark-color);
-  color: var(--white);
-  padding: var(--space-md) 0;
+  position: relative;
+  z-index: 10;
+  background-color: #212529 !important;
+.footer {
+  position: relative;
+  z-index: 10;
+  background-color: #212529 !important;
+}
+
+.footer a.back-to-top {
+  transition: all 0.3s ease;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.footer a.back-to-top:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}}
+
+.footer a.back-to-top {
+  transition: all 0.3s ease;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.footer a.back-to-top:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 
 .back-to-top {
@@ -883,20 +920,144 @@ ul {
   margin-left: var(--space-xs);
 }
 
-/* ===== MODALES ===== */
+/* ===== MODALES MINIMALISTAS IMPACTANTES ===== */
 .modal-content {
-  border-radius: var(--border-radius-md);
+ border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transform: scale(0.95);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+}
+
+.modal.show .modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Cabecera compacta */
+.modal-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  background-color: white;
+}
+
+.modal-header .modal-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #111;
+}
+
+/* Botón cerrar minimalista */
+.modal-header .btn-close {
+  width: 24px;
+  height: 24px;
+  opacity: 0.3;
+  transition: opacity 0.2s;
+  position: relative;
+}
+
+.modal-header .btn-close:hover {
+  opacity: 0.7;
+}
+
+.modal-header .btn-close::before, 
+.modal-header .btn-close::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  background: #000;
+  top: 50%;
+  left: 50%;
+}
+
+.modal-header .btn-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.modal-header .btn-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Cuerpo compacto */
+.modal-body {
+  padding: 1.25rem 1rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Imágenes responsivas */
+.modal-body img {
+   max-height: 70vh;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* Botones impactantes */
+.modal-body .btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+  font-weight: 500;
   border: none;
 }
 
-.modal-header {
-  border-bottom: none;
-  padding-bottom: 0;
+.modal-body .btn-primary {
+  background: #3b82f6;
+  color: white;
 }
 
-.modal-body {
-  padding-top: 0;
+.modal-body .btn-primary:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+/* Efecto hover sutil */
+.modal-body a:not(.btn) {
+  color: #3b82f6;
+  text-decoration: none;
+  border-bottom: 1px dashed transparent;
+}
+
+.modal-body a:not(.btn):hover {
+  border-bottom-color: currentColor;
+}
+
+/* Responsividad */
+@media (max-width: 576px) {
+  .modal-dialog {
+    margin: 0.5rem;
+  }
+  
+  .modal-header, .modal-body {
+    padding: 0.75rem;
+  }
+}
+
+/* Animación sutil */
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal.fade .modal-dialog {
+  animation: modalFadeIn 0.15s ease-out;
+}
+
+/* Eliminar espacio extra en el body */
+body {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+
 
 /* ===== MEDIA QUERIES ===== */
 @media (max-width: 992px) {
@@ -1015,3 +1176,4 @@ ul {
     padding: var(--space-md);
   }
 }
+
