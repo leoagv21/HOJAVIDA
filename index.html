@@ -1,460 +1,822 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leonardo González</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="imag/png" href="img/icono.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leonardo González | Desarrollador y Técnico en Informática</title>
+  <meta name="description" content="Portafolio profesional de Leonardo González, especialista en desarrollo web, sistemas de nómina y soporte técnico">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/icono.png">
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header>
-        <nav>
-            <!-- Contenedor del logo y nombre -->
-            <div class="logo-container">
-                <img src="img/icono.png" alt="Logo de Leonardo" />
-                <div class="logo">Leonardo González</div>
-            </div>
-            <!-- Menú de navegación -->
-            <ul class="menu">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#experiencia">Experiencia</a></li>
-                <li><a href="#educacion">Educación</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-            <!-- Botón hamburguesa (solo visible en pantallas pequeñas) -->
-            <div class="hamburger">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </nav>
-    </header>
-    
 
-    <section id="inicio" class="inicio">
-    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <!-- Primera diapositiva (imagen) -->
-            <div class="carousel-item active">
-                <img src="img/Carrusel/1.png" class="d-block w-100" alt="Primera Imagen">
-            </div>
-            <!-- Segunda diapositiva (video) -->
-            <div class="carousel-item">
-                <video class="d-block w-100" autoplay muted id="videoSlide">
-                    <source src="video/nomina.mp4" type="video/mp4">
-                    Tu navegador no soporta video.
-                </video>
-            </div>
-            <!-- Tercera diapositiva (imagen adicional) -->
-            <div class="carousel-item">
-                <img src="img/Carrusel/2.png" class="d-block w-100" alt="Segunda Imagen">
-            </div>
-        </div>
-        <!-- Controles del carrusel -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-        </button>
-    </div>
-</section>
-
-<section id="sobre-mi" class="sobre-mi">
-  <div class="contenido-sobre-mi">
-    <h2>Sobre Mí</h2>
-
-    <div class="sobre-mi-layout">
-      <div class="foto">
-        <img src="img/perfil.jpg" alt="Foto de Leonardo González">
+<body data-bs-spy="scroll" data-bs-target="#navbar">
+  <!-- Barra de navegación -->
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#inicio">
+        <img src="img/icono.png" alt="Logo" width="40" height="40" class="me-2 rounded-circle">
+        <span class="fw-bold">Leonardo González</span>
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#educacion">Educación</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
       </div>
+    </div>
+  </nav>
 
-      <div class="descripcion">
-        <p>
-          Técnico en Informática con sólida experiencia en soporte técnico, mantenimiento preventivo y correctivo de computadoras, instalación y configuración de sistemas CCTV, redes cableadas e inalámbricas, y desarrollo de aplicaciones web con PHP y bases de datos SQL. Me especializo en brindar soluciones rápidas, seguras y personalizadas, optimizando el rendimiento tecnológico de empresas y profesionales para garantizar entornos eficientes y confiables.
-        </p>
-
-        <div class="video-presentacion">
-          <h3>Video de Presentación</h3>
-          <div class="video-container">
-            <video src="video/Presentacion.mp4" controls></video>
+  <!-- Hero Section -->
+  <header id="inicio" class="hero-section">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/Carrusel/1.png" class="d-block w-100" alt="Desarrollo web">
+          <div class="carousel-caption">
+            <h1>Soluciones Tecnológicas a Medida</h1>
+            <p class="lead">Desarrollo de sistemas personalizados para optimizar tus procesos</p>
+            <a href="#proyectos" class="btn btn-primary btn-lg mt-3">Ver mis proyectos</a>
           </div>
         </div>
+        
+        <div class="carousel-item">
+          <video class="d-block w-100" autoplay muted loop playsinline>
+            <source src="video/nomina.mp4" type="video/mp4">
+          </video>
 
+        </div>
+        
+        <div class="carousel-item">
+          <img src="img/Carrusel/2.png" class="d-block w-100" alt="Infraestructura tecnológica">
+
+        </div>
+      </div>
+      
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Sobre Mí -->
+  <section id="sobre-mi" class="section about-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Sobre Mí</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">Conoce más sobre mi experiencia y habilidades</p>
+      </div>
+      
+      <div class="row align-items-center">
+        <div class="col-lg-4 text-center mb-4 mb-lg-0">
+          <div class="profile-img-container">
+            <img src="img/perfil.jpg" alt="Leonardo González" class="profile-img">
+            <div class="skills-badge">
+              <span>PHP</span>
+              <span>HTML/CSS</span>
+              <span>JavaScript</span>
+              <span>C#</span>
+              <span>Redes</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-8">
+          <div class="about-content">
+            <h3>Técnico en Informática con más de 5 años de experiencia</h3>
+            <p>Especializado en desarrollo de sistemas empresariales, administración de redes y soporte técnico avanzado. Mi enfoque combina habilidades técnicas sólidas con una comprensión profunda de las necesidades empresariales para ofrecer soluciones integrales.</p>
+            
+            <div class="row mt-4">
+              <div class="col-md-6">
+                <ul class="info-list">
+                  <li><strong>Nombre:</strong> Leonardo González</li>
+                  <li><strong>Email:</strong> gonzalezleonardo2110@gmail.com</li>
+                  <li><strong>Teléfono:</strong> +58 424 1596610</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="info-list">
+                  <li><strong>Experiencia:</strong> 5+ años</li>
+                  <li><strong>Especialidad:</strong> Sistemas de Gestión</li>
+                  <li><strong>Idiomas:</strong> Español (nativo)</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="video-presentation mt-5">
+              <h4>Video Presentación</h4>
+              <div class="ratio ratio-16x9">
+                <video controls poster="img/video-thumbnail.PNG">
+                  <source src="video/Presentacion.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyectos Destacados -->
+  <section id="proyectos" class="section projects-section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>Mis Proyectos</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">Algunos de mis trabajos más relevantes</p>
+      </div>
+      
+      <!-- Proyecto Destacado -->
+      <div class="featured-project mb-5">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-7">
+            <div class="project-content">
+              <div class="badge bg-primary mb-3">Proyecto Destacado</div>
+              <h3>Sistema de Gestión de Nómina</h3>
+              <p class="lead">Solución completa desarrollada en PHP para la administración automatizada de nóminas empresariales.</p>
+              
+              <ul class="features-list">
+                <li><i class="fas fa-check-circle text-success me-2"></i> Cálculo automático de nómina</li>
+                <li><i class="fas fa-check-circle text-success me-2"></i> Generación de recibos y reportes</li>
+                <li><i class="fas fa-check-circle text-success me-2"></i> Gestión integral de empleados</li>
+                <li><i class="fas fa-check-circle text-success me-2"></i> Seguridad de datos avanzada</li>
+              </ul>
+              
+              <div class="project-video mt-4">
+                <div class="ratio ratio-16x9">
+                  <video controls poster="img/nomina/poster.jpg">
+                    <source src="video/Portafolio.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+            <div class="col-lg-5">
+              <div class="project-gallery">
+                <div class="row g-2">
+                  <div class="col-6">
+                    <img src="img/nomina/3.PNG" alt="Panel de control" class="img-fluid rounded"
+                      data-bs-toggle="modal" data-bs-target="#galleryModal"
+                      data-bs-img="img/nomina/3.PNG" data-bs-caption="Panel de control principal">
+                  </div>
+
+                <div class="col-6">
+                  <img src="img/nomina/5.PNG" alt="Reportes" class="img-fluid rounded" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-img="img/nomina/5.PNG" data-bs-caption="Generación de reportes">
+                </div>
+                <div class="col-6">
+                  <img src="img/nomina/6.PNG" alt="Empleados" class="img-fluid rounded" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-img="img/nomina/6.PNG" data-bs-caption="Módulo de empleados">
+                </div>
+                <div class="col-6">
+                  <img src="img/nomina/7.PNG" alt="Configuración" class="img-fluid rounded" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-img="img/nomina/7.PNG" data-bs-caption="Personalización de parámetros">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Otros Proyectos -->
+      <div class="row g-4">
+        <!-- Proyecto 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card">
+            <div class="project-img-container">
+              <img src="img/PROYECTO1.PNG" alt="Página Licosur" class="project-img">
+              <div class="project-links">
+                <a href="https://licorsur.com/" target="_blank" class="btn btn-sm btn-outline-light"><i class="fas fa-external-link-alt me-1"></i> Visitar</a>
+                <button class="btn btn-sm btn-outline-light" data-bs-toggle="modal" data-bs-target="#projectModal1">
+                  <i class="fas fa-search-plus me-1"></i> Detalles
+                </button>
+              </div>
+            </div>
+            <div class="project-info">
+              <h4>Página Informativa Licosur</h4>
+              <p>Sitio web informativo desarrollado desde cero para Distribuidora Licosur.</p>
+              <div class="project-tech">
+                <span class="badge bg-secondary">HTML</span>
+                <span class="badge bg-secondary">CSS</span>
+                <span class="badge bg-secondary">JavaScript</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Proyecto 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card">
+            <div class="project-img-container">
+              <img src="img/corredor/1.PNG" alt="Integración LanFree" class="project-img">
+              <div class="project-links">
+                <button class="btn btn-sm btn-outline-light" data-bs-toggle="modal" data-bs-target="#projectModal2">
+                  <i class="fas fa-search-plus me-1"></i> Detalles
+                </button>
+              </div>
+            </div>
+            <div class="project-info">
+              <h4>Integración con LanFree</h4>
+              <p>Aplicación en C# para integración de balanza con sistema administrativo.</p>
+              <div class="project-tech">
+                <span class="badge bg-secondary">C#</span>
+                <span class="badge bg-secondary">.NET</span>
+                <span class="badge bg-secondary">SQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Proyecto 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card">
+            <div class="project-img-container">
+              <img src="img/cctv/camara1.jpg" alt="Sistema CCTV" class="project-img">
+              <div class="project-links">
+                <button class="btn btn-sm btn-outline-light" data-bs-toggle="modal" data-bs-target="#projectModal3">
+                  <i class="fas fa-search-plus me-1"></i> Detalles
+                </button>
+              </div>
+            </div>
+            <div class="project-info">
+              <h4>Sistemas de CCTV</h4>
+              <p>Instalación y configuración de sistemas de videovigilancia.</p>
+              <div class="project-tech">
+                <span class="badge bg-secondary">CCTV</span>
+                <span class="badge bg-secondary">Redes</span>
+                <span class="badge bg-secondary">Seguridad</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiencia -->
+  <section id="experiencia" class="section experience-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Experiencia Profesional</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">Mi trayectoria laboral y logros</p>
+      </div>
+      
+      <div class="timeline">
+        <!-- Experiencia 1 -->
+        <div class="timeline-item">
+          <div class="timeline-date">2021 - Presente</div>
+          <div class="timeline-content">
+            <h4>Distribuidora Licorsur</h4>
+            <h5>Analista de Soporte Técnico</h5>
+            <ul>
+              <li>Desarrollo de aplicaciones en PHP, HTML, C# y .NET</li>
+              <li>Mantenimiento preventivo y correctivo de equipos</li>
+              <li>Gestión integral de soporte técnico</li>
+              <li>Implementación de sistema de nómina personalizado</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Experiencia 2 -->
+        <div class="timeline-item">
+          <div class="timeline-date">2020 - 2021</div>
+          <div class="timeline-content">
+            <h4>LanFree Sistemas C.A.</h4>
+            <h5>Técnico Informático</h5>
+            <ul>
+              <li>Soporte del sistema administrativo LanFree</li>
+              <li>Configuración de impresoras, redes y servidores</li>
+              <li>Instalación de cámaras de seguridad</li>
+              <li>Soporte técnico remoto y presencial</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Experiencia 3 -->
+        <div class="timeline-item">
+          <div class="timeline-date">2019 - 2020</div>
+          <div class="timeline-content">
+            <h4>PlatiniumSystemCable C.A.</h4>
+            <h5>Asistente Técnico</h5>
+            <ul>
+              <li>Auditoría de servicio y reconexiones</li>
+              <li>Atención al cliente y resolución de problemas</li>
+              <li>Instalación de servicios de cable e internet</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Experiencia 4 -->
+        <div class="timeline-item">
+          <div class="timeline-date">2018 - 2019</div>
+          <div class="timeline-content">
+            <h4>Inversionesyixileogv13 C.A.</h4>
+            <h5>Técnico Informático</h5>
+            <ul>
+              <li>Reparación y mantenimiento de computadoras</li>
+              <li>Gestión de bases de datos</li>
+              <li>Diseño de páginas web</li>
+              <li>Soporte técnico general</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Educación -->
+  <section id="educacion" class="section education-section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>Formación Académica</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">Mi preparación y certificaciones</p>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Educación 1 -->
+        <div class="col-md-6">
+          <div class="education-card">
+            <div class="education-header">
+              <i class="fas fa-graduation-cap"></i>
+              <div>
+                <h4>freeCodeCamp</h4>
+                <span>2023</span>
+              </div>
+            </div>
+            <div class="education-body">
+              <h5>Certificación en Diseño Web Responsivo</h5>
+              <p>Curso intensivo que cubre HTML5, CSS3, diseño visual, accesibilidad y principios de diseño responsivo.</p>
+              <a href="https://freecodecamp.org/certification/fcc8e6207c5-3c2b-407b-8db6-2da031e7d32e/responsive-web-design" target="_blank" class="btn btn-outline-primary btn-sm">
+                Ver Certificado
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Educación 2 -->
+        <div class="col-md-6">
+          <div class="education-card">
+            <div class="education-header">
+              <i class="fas fa-university"></i>
+              <div>
+                <h4>UNETI</h4>
+                <span>En curso</span>
+              </div>
+            </div>
+            <div class="education-body">
+              <h5>Ingeniería en Informática</h5>
+              <p>Formación en desarrollo de software, bases de datos, redes y gestión de proyectos tecnológicos.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Educación 3 -->
+        <div class="col-md-6">
+          <div class="education-card">
+            <div class="education-header">
+              <i class="fas fa-school"></i>
+              <div>
+                <h4>Unidad Educativa Benito Canónico</h4>
+                <span>2017</span>
+              </div>
+            </div>
+            <div class="education-body">
+              <h5>Bachiller en Ciencias</h5>
+              <p>Educación secundaria con énfasis en ciencias básicas y tecnología.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Educación 4 -->
+        <div class="col-md-6">
+          <div class="education-card">
+            <div class="education-header">
+              <i class="fas fa-certificate"></i>
+              <div>
+                <h4>Cursos Complementarios</h4>
+                <span>2018-Presente</span>
+              </div>
+            </div>
+            <div class="education-body">
+              <h5>Variedad de cursos técnicos</h5>
+              <p>Formación continua en programación, redes, seguridad informática y nuevas tecnologías.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="section contact-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Contacto</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">¿Listo para comenzar tu proyecto? ¡Contáctame!</p>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <form id="contactForm" class="contact-form">
+            <div class="mb-3">
+              <label for="name" class="form-label">Nombre Completo</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+            
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo Electrónico</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            
+            <div class="mb-3">
+              <label for="subject" class="form-label">Asunto</label>
+              <input type="text" class="form-control" id="subject" required>
+            </div>
+            
+            <div class="mb-3">
+              <label for="message" class="form-label">Mensaje</label>
+              <textarea class="form-control" id="message" rows="5" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+          </form>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h5>Correo Electrónico</h5>
+                <a href="mailto:gonzalezleonardo2110@gmail.com">gonzalezleonardo2110@gmail.com</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <h5>Teléfono/WhatsApp</h5>
+                <a href="tel:+584241596610">+58 424 1596610</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h5>Ubicación</h5>
+                <p>Venezuela</p>
+              </div>
+            </div>
+            
+            <div class="social-links mt-4">
+              <h5>Redes Sociales</h5>
+              <div class="d-flex gap-3">
+                <a href="https://www.facebook.com/leoagv21" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/leonardo.tech" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/584241596610" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://linktr.ee/leoagv21" target="_blank" class="social-icon"><i class="fas fa-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="mb-0">&copy; 2025 Leonardo González. Todos los derechos reservados.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <a href="#inicio" class="back-to-top">
+            <i class="fas fa-arrow-up"></i> Volver arriba
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modales -->
+  <!-- Modal Galería -->
+  <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="" alt="" id="modalImage" class="img-fluid">
+          <p id="modalCaption" class="mt-3"></p>
+        </div>
       </div>
     </div>
   </div>
-</section>
 
-
- 
-     
-        <section id="proyectos" class="proyectos">
-    <h2>Proyectos</h2>
-    <div class="galeria">
-        <!-- Proyecto 1 -->
-        <div class="proyecto">
-            <h3>Página Informativa para Distribuidora Licosur</h3>
-            <p>
-                Esta página fue desarrollada para la empresa <strong>Distribuidora Licosur</strong>. Es un sitio web 
-                netamente informativo, que está en proceso de desarrollo. Todo el apartado de código fue desarrollado 
-                desde cero y está siendo manipulado por mí para asegurar su correcto funcionamiento y estructura.
-            </p>
-            <p class="descripcion-larga">
-                    Puedes acceder a la página mediante el siguiente enlace: 
-                    <a href="https://licorsur.com/" target="_blank" rel="noopener noreferrer">Visitar página de Licosur</a>
-                </p>
-                <a href="javascript:void(0);" class="leer-mas" onclick="toggleDescripcion(this)">Leer más</a>
-                <div class="imagenes">
-                    <img class="proyecto-img" src="img/PROYECTO1.PNG" alt="Pantalla principal de la página informativa">
-                    <img class="proyecto-img" src="img/PROYECTO2.PNG" alt="Vista detallada de la página informativa">
-                </div>
-            </div>
-        
-
-        <!-- Proyecto 2 -->
-        <div class="proyecto">
-            <h3>Gestión de Nómina</h3>
-            <p>
-                Esta aplicación en PHP está diseñada para gestionar de manera eficiente el proceso de nómina de una empresa. 
-                Permite generar reportes detallados para el pago de nómina, gestionar información de empleados y almacenar sus 
-                datos de manera segura.
-            </p>
-            
-            <p class="descripcion-larga">
-                    Este sistema ha sido desarrollado a medida para adaptarse a las necesidades específicas de la empresa y optimizar 
-                    el manejo de la información relacionada con los empleados y pagos.
-                </p>
-                <a href="javascript:void(0);" class="leer-mas" onclick="toggleDescripcion(this)">Leer más</a>
-                <div class="imagenes">
-                    <img class="proyecto-img" src="img/nomina/3.PNG" alt="Pantalla principal del sistema de gestión de nómina">
-                    <img class="proyecto-img" src="img/nomina/5.PNG" alt="Reporte de productos en el sistema de gestión de nómina">
-                    <img class="proyecto-img" src="img/nomina/6.PNG" alt="Pantalla principal del sistema de gestión de nómina">
-                    <img class="proyecto-img" src="img/nomina/7.PNG" alt="Reporte de productos en el sistema de gestión de nómina">
-                    <img class="proyecto-img" src="img/nomina/55.PNG" alt="Pantalla principal del sistema de gestión de nómina">
-                </div>
-            </div>
-        
-
-        <!-- Proyecto 3 -->
-        <div class="proyecto">
-            <h3>Integración de Balanza con Sistema Administrativo LanFree</h3>
-            <p>
-                Este proyecto consiste en una aplicación desarrollada en C# y .NET que facilita la integración de la balanza de pesaje 
-                con el sistema administrativo LanFree. La aplicación toma datos específicos de la balanza, los procesa y los transmite 
-                a la base de datos del sistema.
-            </p>
-            <p class="descripcion-larga">
-                    La aplicación fue desarrollada a medida para que trabajara de manera fluida con LanFree, automatizando la carga de datos 
-                    y mejorando la precisión en los registros de inventarios.
-                </P>
-                <a href="javascript:void(0);" class="leer-mas" onclick="toggleDescripcion(this)">Leer más</a>
-                <div class="imagenes">
-                    <img class="proyecto-img" src="img/corredor/1.PNG" alt="Pantalla principal de la aplicación de integración de balanza">
-                    <img class="proyecto-img" src="img/corredor/Captura de pantalla (31).png" alt="Vista de la integración con el sistema LanFree">
-                    <img class="proyecto-img" src="img/corredor/Captura de pantalla (32).png" alt="Pantalla principal de la aplicación de integración de balanza">
-                    <img class="proyecto-img" src="img/corredor/Captura de pantalla (33).png" alt="Pantalla principal de la aplicación de integración de balanza">
-                    <img class="proyecto-img" src="img/corredor/Captura de pantalla (34).png" alt="Pantalla principal de la aplicación de integración de balanza">
-                    <img class="proyecto-img" src="img/corredor/Captura de pantalla (35).png" alt="Pantalla principal de la aplicación de integración de balanza">
-                </div>
-            </div>
-        
-
-        <!-- Proyecto 4 -->
-        <div class="proyecto">
-            <h3>Instalación y Configuración de Sistemas CCTV</h3>
-            <p class="descripcion-corta">
-                Este proyecto consistió en la instalación y configuración de sistemas de cámaras de videovigilancia (CCTV) para garantizar la seguridad de instalaciones clave. Se implementaron soluciones personalizadas adaptadas a las necesidades específicas del cliente, utilizando equipos de alta calidad para una visualización clara y fiable en tiempo real.
-            </p>
-            <p class="descripcion-larga">
-                La instalación incluyó la configuración de cámaras IP y analógicas, así como la integración con sistemas de grabación y monitoreo remoto. A través de una gestión eficiente, se logró un control total de las áreas monitoreadas, proporcionando un entorno seguro y protegido. El sistema también permite el acceso remoto, brindando flexibilidad para la supervisión desde cualquier lugar.
-            </p>
-            <a href="javascript:void(0);" class="leer-mas" onclick="toggleDescripcion(this)">Leer más</a>
-            <div class="imagenes">
-                <img class="proyecto-img" src="img/cctv/camara1.jpg" alt="Instalación de cámaras CCTV">
-                <img class="proyecto-img" src="img/cctv/camara2.jpg" alt="Configuración de">
-                <img class="proyecto-img" src="img/cctv/camara3.jpg" alt="Monitoreo remoto de cámaras">
-            </div>
+  <!-- Modal Proyecto 1 -->
+  <div class="modal fade" id="projectModal1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Página Informativa Licosur</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <!-- Proyecto 6 -->
-        <div class="proyecto">
-            <h3>Instalación y Configuración de Redes</h3>
-            <p class="descripcion-corta">
-                Este proyecto consistió en la instalación y configuración de redes LAN, abarcando desde el cableado estructurado hasta la configuración de equipos de red como routers, switches y servidores. El objetivo fue asegurar una conectividad eficiente, segura y de alto rendimiento para el cliente.
-            </p>
-            <p class="descripcion-larga">
-                El proyecto incluyó la planificación, diseño e instalación de la infraestructura de red, optimizando el rendimiento y garantizando una cobertura completa de la red dentro de las instalaciones. Se configuraron servidores y equipos de red para asegurar una comunicación fluida y segura entre los dispositivos conectados. Además, se implementaron medidas de seguridad como firewalls y protocolos de cifrado para proteger los datos transmitidos. Con esta implementación, se logró un entorno de red estable, escalable y accesible tanto para usuarios locales como remotos.
-            </p>
-            <a href="javascript:void(0);" class="leer-mas" onclick="toggleDescripcion(this)">Leer más</a>
-            <div class="imagenes">
-                <img class="proyecto-img" src="img/redes/cableado1.jpg" alt="Instalación de cableado estructurado">
-                <img class="proyecto-img" src="img/redes/servidor.jpg" alt="Configuración de servidor de red">
-                <img class="proyecto-img" src="img/redes/red-switch.jpg" alt="Configuración de switch de red">
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="img/PROYECTO1.PNG" alt="Licorsur" class="img-fluid mb-3">
+              <img src="img/PROYECTO2.PNG" alt="Licorsur" class="img-fluid">
             </div>
+            <div class="col-md-6">
+              <p>Esta página fue desarrollada para la empresa <strong>Distribuidora Licosur</strong>. Es un sitio web netamente informativo, que está en proceso de desarrollo. Todo el apartado de código fue desarrollado desde cero y está siendo manipulado por mí para asegurar su correcto funcionamiento y estructura.</p>
+              <a href="https://licorsur.com/" target="_blank" class="btn btn-primary mt-3">
+                <i class="fas fa-external-link-alt me-2"></i> Visitar Sitio Web
+              </a>
+              <div class="project-details mt-4">
+                <h6>Tecnologías utilizadas:</h6>
+                <ul>
+                  <li>HTML5</li>
+                  <li>CSS3</li>
+                  <li>JavaScript</li>
+                  <li>Diseño Responsivo</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-
-    </div>
-</section>
-
-
-
-<section id="video-explicativo" class="video-explicativo">
-  <div class="contenido-video">
-    <h2>Desarrollo de Sistema de Nómina</h2>
-    <p>
-      En este video te presento de forma clara y práctica cómo funciona el sistema de nómina que desarrollé, mostrando sus módulos, procesos de cálculo, generación de recibos y reportes personalizados.
-    </p>
-
-    <div class="video-panorama">
-      <video src="video/Portafolio.mp4" controls></video>
+      </div>
     </div>
   </div>
-</section>
 
-
-
-
-<!-- Lightbox -->
-<div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img" src="" alt="Imagen ampliada">
-    <div class="caption" id="lightbox-caption"></div>
-</div>
-
-
-<section id="experiencia" class="experiencia">
-    <h2>Experiencia</h2>
-    <ul>
-        <li>
-            <h3>Inversionesyixileogv13. C.A.</h3>
-            <p>Logística | Conteo, manipulación y despacho de mercancía, control de inventario, y mantenimiento del área de trabajo.</p>
-        </li>
-        <li>
-            <h3>Inversionesyixileogv13. C.A.</h3>
-            <p>Técnico Informático | Reparación y mantenimiento de computadoras, gestión de bases de datos, diseño de páginas web y soporte técnico.</p>
-        </li>
-        <li>
-            <h3>PlatiniumSystemCable.C.A.</h3>
-            <p>Asistente Técnico | Auditoría de servicio, reconexión e instalación, atención al cliente y resolución de problemas.</p>
-        </li>
-        <li>
-            <h3>LanFree Sistemas C.A.</h3>
-            <p>Técnico Informático | Soporte del sistema administrativo LanFree, configuración de impresoras, redes, cámaras de seguridad y servidores.</p>
-        </li>
-        <li>
-            <h3>Distribuidora Licorsur 2021</h3>
-            <p>Analista de Soporte Técnico | Mantenimiento preventivo y correctivo de equipos, desarrollo de aplicaciones en PHP, HTML, C#, .NET, y gestión de soporte técnico.</p>
-        </li>
-        <li>
-            <h3>Experiencia Multisectorial</h3>
-            <p>Soporte técnico y administración de sistemas en diversas empresas. Optimización de equipos, redes y soporte remoto, incluyendo empresas como Inversiones Pronáutica, Centro Médico La Hacienda, Pasta Morandi, y más.</p>
-        </li>
-    </ul>
-</section>
-
-
-    <section id="educacion" class="educacion">
-        <h2>Educación</h2>
-        <ul>
-            <li>
-                <h3>freecodecamp</h3>
-                <p>
-                    <strong>Certificación:</strong> Diseño Web Responsivo<br>
-                    <a href="https://freecodecamp.org/certification/fcc8e6207c5-3c2b-407b-8db6-2da031e7d32e/responsive-web-design" 
-                       target="_blank" 
-                       rel="noopener" 
-                       style="color: #2980B9; text-decoration: none;">
-                       Ver Certificado
-                    </a>
-                </p>
-            </li>
-            
-
-            <li>
-                <h3>UNETI</h3>
-                <p>Ingeniería en Informática (En curso).</p>
-            </li>
-            <li>
-                <h3>Unidad Educativa Benito Canónico</h3>
-                <p>Bachiller en Ciencias.</p>
-            </li>
-        </ul>
-    </section>
-
-    <section id="contacto" class="contacto">
-    <h2>Contacto</h2>
-    <p>¿Tienes alguna pregunta o necesitas ayuda? Envíame un mensaje a través de este formulario y te contactaré lo antes posible. ¡Estoy aquí para ayudarte!</p>
-    <form action="contact.php" method="POST">
-        <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Tu nombre completo" required>
+  <!-- Modal Proyecto 2 -->
+  <div class="modal fade" id="projectModal2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Integración con LanFree</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-
-        <div class="mb-3">
-            <label for="email" class="form-label">Correo Electrónico</label>
-            <input type="email" id="email" name="email" class="form-control" placeholder="Tu dirección de correo" required>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div id="project2Carousel" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="img/corredor/1.PNG" class="d-block w-100" alt="Integración LanFree">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/corredor/Captura de pantalla (31).png" class="d-block w-100" alt="Integración LanFree">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/corredor/Captura de pantalla (32).png" class="d-block w-100" alt="Integración LanFree">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#project2Carousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#project2Carousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <p>Este proyecto consiste en una aplicación desarrollada en C# y .NET que facilita la integración de la balanza de pesaje con el sistema administrativo LanFree. La aplicación toma datos específicos de la balanza, los procesa y los transmite a la base de datos del sistema.</p>
+              <p>La aplicación fue desarrollada a medida para que trabajara de manera fluida con LanFree, automatizando la carga de datos y mejorando la precisión en los registros de inventarios.</p>
+              <div class="project-details mt-4">
+                <h6>Tecnologías utilizadas:</h6>
+                <ul>
+                  <li>C#</li>
+                  <li>.NET Framework</li>
+                  <li>SQL Server</li>
+                  <li>Integración de hardware</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="mb-3">
-            <label for="mensaje" class="form-label">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" class="form-control" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
-    <p class="mt-3">También puedes enviarme un correo directamente a <a href="mailto:gonzalezleonardo2110@gmail.com">gonzalezleonardo2110@gmail.com</a>. ¡Te responderé lo más pronto posible!</p>
-</section>
-
-
-<div class="contacto">
-    <!-- Información de Contacto -->
-    <div class="contact-info mt-4">
-        <h3>Contacta conmigo</h3>
-        <p><strong>Teléfono:</strong> +58 4241596610</p>
-        <p><strong>WhatsApp:</strong> 
-            <a href="https://wa.me/584241596610" target="_blank" rel="noopener">Haz clic aquí para enviar un mensaje</a>
-        </p>
-
-        <h4>Sígueme en mis redes sociales</h4>
-        <div class="iconos-sociales">
-            <a href="https://www.facebook.com/leoagv21" target="_blank" rel="noopener">
-                <img src="img/1x/facebook-icon.png" alt="Facebook" width="40">
-            </a>
-            <a href="https://www.instagram.com/leonardo.tech" target="_blank" rel="noopener">
-                <img src="img/1x/instagram-icon.png" alt="Instagram" width="40">
-            </a>
-            <a href="https://wa.me/584241596610" target="_blank" rel="noopener">
-                <img src="img/1x/whatsapp-icon.png" alt="WhatsApp" width="40">
-            </a>
-            <a href="https://linktr.ee/leoagv21" target="_blank" rel="noopener">
-                <img src="img/1x/linktree-icon.png" alt="Linktree" width="40">
-            </a>
-        </div>
+      </div>
     </div>
-</div>
+  </div>
 
+  <!-- Modal Proyecto 3 -->
+  <div class="modal fade" id="projectModal3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Sistemas de CCTV</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div id="project3Carousel" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="img/cctv/camara1.jpg" class="d-block w-100" alt="CCTV">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/cctv/camara2.jpg" class="d-block w-100" alt="CCTV">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/cctv/camara3.jpg" class="d-block w-100" alt="CCTV">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#project3Carousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#project3Carousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <p>Este proyecto consistió en la instalación y configuración de sistemas de cámaras de videovigilancia (CCTV) para garantizar la seguridad de instalaciones clave. Se implementaron soluciones personalizadas adaptadas a las necesidades específicas del cliente, utilizando equipos de alta calidad para una visualización clara y fiable en tiempo real.</p>
+              <p>La instalación incluyó la configuración de cámaras IP y analógicas, así como la integración con sistemas de grabación y monitoreo remoto. A través de una gestión eficiente, se logró un control total de las áreas monitoreadas, proporcionando un entorno seguro y protegido.</p>
+              <div class="project-details mt-4">
+                <h6>Tecnologías utilizadas:</h6>
+                <ul>
+                  <li>Cámaras IP y analógicas</li>
+                  <li>Sistemas DVR/NVR</li>
+                  <li>Redes para videovigilancia</li>
+                  <li>Monitoreo remoto</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+ 
+<script>
+  // 🟣 MENÚ HAMBURGUESA
+  const hamburger = document.querySelector('.hamburger');
+  const menu = document.querySelector('.menu');
+  const menuLinks = document.querySelectorAll('.menu li a');
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-const hamburger = document.querySelector('.hamburger');
-const menu = document.querySelector('.menu');
-const menuLinks = document.querySelectorAll('.menu li a');
-
-// Mostrar/ocultar el menú al hacer clic en el botón hamburguesa
-hamburger.addEventListener('click', () => {
+  // Mostrar/ocultar menú al hacer clic en el botón hamburguesa
+  hamburger.addEventListener('click', () => {
     menu.classList.toggle('show');
     hamburger.classList.toggle('active');
-});
+  });
 
-// Cerrar el menú al hacer clic en cualquier enlace
-menuLinks.forEach(link => {
+  // Cerrar menú al hacer clic en cualquier enlace
+  menuLinks.forEach(link => {
     link.addEventListener('click', () => {
-        menu.classList.remove('show');
-        hamburger.classList.remove('active');
+      menu.classList.remove('show');
+      hamburger.classList.remove('active');
     });
-});
+  });
 
+  // 🟣 LIGHTBOX DE PROYECTOS
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const closeLightbox = document.querySelector('.lightbox .close');
+  const proyectoImgs = document.querySelectorAll('.proyecto-img');
 
-    </script>
-    
-    
-    <script>
-        // Obtener elementos del DOM para el lightbox
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const lightboxCaption = document.getElementById('lightbox-caption');
-        const closeLightbox = document.querySelector('.lightbox .close');
-        const proyectoImgs = document.querySelectorAll('.proyecto-img');
+  // Mostrar el lightbox al hacer clic en una imagen
+  proyectoImgs.forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = img.src;
+      lightboxCaption.innerText = img.alt;
+    });
+  });
 
-        // Mostrar el lightbox
-        proyectoImgs.forEach((img) => {
-            img.addEventListener('click', () => {
-                lightbox.style.display = 'flex';
-                lightboxImg.src = img.src;
-                lightboxCaption.innerText = img.alt; // Usamos el atributo "alt" como descripción
-            });
-        });
+  // Cerrar lightbox
+  closeLightbox?.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
 
-        // Cerrar el lightbox
-        closeLightbox?.addEventListener('click', () => {
-            lightbox.style.display = 'none';
-        });
+  // Cerrar lightbox al hacer clic fuera de la imagen
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+    }
+  });
 
-        // Cerrar el lightbox haciendo clic fuera de la imagen
-        lightbox?.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                lightbox.style.display = 'none';
-            }
-        });
-    </script>
+  // 🟣 CARRUSEL CON VIDEO CONTROLADO
+  document.addEventListener("DOMContentLoaded", () => {
+    const carousel = document.getElementById("carouselExample");
+    const videoSlide = document.getElementById("videoSlide");
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const carousel = document.getElementById("carouselExample");
-            const video = document.getElementById("videoSlide");
-            const carouselInstance = new bootstrap.Carousel(carousel, {
-                interval: 5000, // Intervalo automático
-            });
+    if (carousel && videoSlide) {
+      const carouselInstance = new bootstrap.Carousel(carousel, {
+        interval: 5000
+      });
 
-            // Pausar el carrusel cuando el video esté activo
-            carousel.addEventListener("slid.bs.carousel", (event) => {
-                const activeItem = event.relatedTarget;
-                if (activeItem.contains(video)) {
-                    carouselInstance.pause(); // Pausa el carrusel
-                    video.play(); // Asegura que el video comience a reproducirse
-                } else {
-                    carouselInstance.cycle(); // Reinicia el avance automático
+      // Pausar el carrusel si el video está activo
+      carousel.addEventListener("slid.bs.carousel", (event) => {
+        const activeItem = event.relatedTarget;
+        if (activeItem.contains(videoSlide)) {
+          carouselInstance.pause();
+          videoSlide.play();
+        } else {
+          carouselInstance.cycle();
+        }
+      });
+
+      // Reiniciar carrusel al terminar video
+      videoSlide.addEventListener("ended", () => {
+        carouselInstance.cycle();
+      });
+    }
+  });
+
+  // 🟣 REPRODUCIR VIDEO PRESENTACIÓN AL HACERSE VISIBLE
+        const videoPresentacion = document.getElementById('videoPresentacion');
+
+        if (videoPresentacion) {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Solo reproducir si no está pausado manualmente
+                if (videoPresentacion.paused && !videoPresentacion.dataset.userPaused) {
+                videoPresentacion.play();
                 }
-            });
-
-            // Continuar el carrusel cuando el video termine
-            video.addEventListener("ended", () => {
-                carouselInstance.cycle(); // Reinicia el avance automático
-            });
-        });
-    </script>
-<script>
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/insights/script.js"></script>
-  
-    <script>
-        // Función para alternar la visibilidad de la descripción extendida
-        function toggleDescripcion(link) {
-            var descripcionLarga = link.previousElementSibling.nextElementSibling; // Div con la descripción larga
-            var descripcionCorta = link.previousElementSibling; // Div con la descripción corta
-
-            // Cambiar la visibilidad de la descripción extendida
-            if (descripcionLarga.style.display === "none" || descripcionLarga.style.display === "") {
-                descripcionLarga.style.display = "block";
-                descripcionCorta.style.display = "none"; // Ocultar la descripción corta
-                link.textContent = "Leer menos";
             } else {
-                descripcionLarga.style.display = "none";
-                descripcionCorta.style.display = "block"; // Mostrar la descripción corta
-                link.textContent = "Leer más";
+                // Pausar al salir de pantalla
+                if (!videoPresentacion.paused) {
+                videoPresentacion.pause();
+                }
             }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(videoPresentacion);
+
+        // Marcar pausa manual con un atributo data-userPaused
+        videoPresentacion.addEventListener('pause', () => {
+            // Si lo pausó manualmente, marcamos
+            if (videoPresentacion.currentTime > 0 && !videoPresentacion.ended) {
+            videoPresentacion.dataset.userPaused = "true";
+            }
+        });
+
+        // Si le da play desde controles, eliminamos el atributo para permitir autoplay de nuevo
+        videoPresentacion.addEventListener('play', () => {
+            delete videoPresentacion.dataset.userPaused;
+        });
         }
 
-        // Establecer los botones iniciales
-        document.querySelectorAll('.leer-mas').forEach(function (boton) {
-            boton.addEventListener('click', function () {
-                toggleDescripcion(boton);
-            });
-        });
-    </script>
 
-    <footer class="text-center mt-4 py-3">
-        &copy; 2025 Leonardo. Todos los derechos reservados.
-    </footer>
-</body>
-</html>
+
+  // 🟣 DESCRIPCIÓN EXTENDIDA "LEER MÁS"
+  function toggleDescripcion(link) {
+    const descripcionLarga = link.previousElementSibling.nextElementSibling;
+    const descripcionCorta = link.previousElementSibling;
+
+    if (descripcionLarga.style.display === "none" || descripcionLarga.style.display === "") {
+      descripcionLarga.style.display = "block";
+      descripcionCorta.style.display = "none";
+      link.textContent = "Leer menos";
+    } else {
+      descripcionLarga.style.display = "none";
+      descripcionCorta.style.display = "block";
+      link.textContent = "Leer más";
+    }
+  }
+
+  document.querySelectorAll('.leer-mas').forEach(boton => {
+    boton.addEventListener('click', () => {
+      toggleDescripcion(boton);
+    });
+  });
+
+  // 🟣 VERCELO INSIGHTS SCRIPT
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+
+<script defer src="/_vercel/insights/script.js"></script>
